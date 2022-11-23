@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="gb2312"?>
+<project target="omqsapi" targettype="dll" workdir="." hasdebug="yes" hasmap="no" hasprofile="no" multithread="yes" warninglevel="2">
+	<cppflags>
+		<cppflag name="DEBUG_NOT_LOG"/>
+		<cppflag name="OUTFOGSERVICE_API_IS_LIB"/>
+		<cppflag name="LIB_OUTFOGSERVICE_API_EXPORT"/>
+	</cppflags>
+	<package dir="../../src_base/function"/>
+	<package dir="../../src_base/datastruct"/>
+	<package dir="../../src_base/thread"/>
+	<package dir="../../src_base/xml"/>
+	<package dir="../../src_base/logger"/>
+	<package dir="../../src_base/crypt"/>
+	<package dir="../../src_base/mongoose"/>	
+	<package dir="../../libs/openssl" version="1.1.0h" libpath="static"/>
+	
+	<package dir="../../src_network/network"/>
+	<package dir="../../src_network/network_tcp"/>
+	<package dir="../../src_network/network_udp"/>
+	<package dir="../../src_network/network_multicast"/>
+	<!--package dir="../../src_network/sslnetwork"/-->
+	<package dir="../../src_network/reactor"/>
+
+	<package dir="../../src_protocol/flow"/>
+	<package dir="../../src_protocol/protocol"/>	
+	<package dir="../../src_protocol/protocol_channel"/>
+	<package dir="../../src_protocol/protocol_subscribe"/>
+	<package dir="../../src_protocol/protocol_link"/>
+	<package dir="../../src_protocol/protocol_ofp"/>
+	<package dir="../../src_protocol/connect_tcp"/>
+	<package dir="../../src_protocol/protocol_compress">	
+	<package dir="../../src_protocol/protocol_sequence"/>
+	<package dir="../../src_protocol/protocol_guard"/>
+	<package dir="../../src_protocol/protocol_hotline"/>
+	<package dir="../../src_protocol/protocol_ftd"/>
+	<package dir="../../src_protocol/package"/>	
+	
+	<package dir="../../src/sequence"/>
+	<package dir="../../src/fronts"/>
+	<package dir="../../src/linkmanager"/>
+	<package dir="../../src/linkmanager/offerlink"/>
+	
+	<package dir="../../libs/ofserviceapi" version="1.0" libpath=""/>
+	<package dir="../../libs/ofserviceapi/ofapibase"/>
+	<package dir="../../src/omqsapi"/>
+</project>

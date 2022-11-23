@@ -1,0 +1,36 @@
+总体技术（frame）：
+	所有技术系统使用的框架主要功能包括：
+	（1）接入方式全：插件/共享内存/通讯(tcp|[udp|multi|fix]|【ws|http】)
+	（2）接入语言多：api的多语言支持（C/C++/Java/Python/Go/C#等）
+	（3）通信延时低：无锁队列（内部延时低于1us）
+	（4）并发接入高：支持树形扩展接入，无限扩展前置个数，理论处理上限达到20万+消息(不包括应用)
+	（5）数据一致强：数据一致性，消息去重，事务保证，流水重拿
+	（6）系统可靠稳：主备、主从支持
+	（7）系统持续性：7x24小时运行支持
+	（8）接口定制快：用户接入新的接入自己可写接口，无需重新发布框架就快速实现接入
+	
+TodoList:		
+1 shm-flow
+2 shm-struct
+3 pcap
+4 intel-dbck
+5 fix协议/fixapi提供
+6 api性能优化
+7 绑定cpu
+8 omq的性能优化，达到20万笔/秒
+10 api加密完善		
+11 python的api方法
+12 api代理设置
+13 sinkredis等omq的offerlink在一定请下 package.release()出现空指针core的情况
+
+
+1 Package增加是否所有的field是同一个类型Field的Header标志，json输出的时候可以简化处理，zip=2处理
+2 每个Field字段增加是否输出Json，api的ftd也是不用这个字段，OrderOut就不用了
+
+3 ws打印http请求的日志
+4 front日志http的日志请求需要一行输出
+5 front在连接过多的时候假死问题
+
+Versions：
+1.0.0_20191212：
+	1、初始化

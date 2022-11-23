@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="function">
+      <UniqueIdentifier>{e1760c50-87d9-4f92-9846-f4be8e5f5dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="datastruct">
+      <UniqueIdentifier>{2028595b-2609-4812-b0e7-896af6de7aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thread">
+      <UniqueIdentifier>{38c74f93-9b97-41d4-ba0f-8d41b1488b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xml">
+      <UniqueIdentifier>{7f0bdb20-53cf-4b9e-8905-c6ca6b55e50a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logger">
+      <UniqueIdentifier>{b5fdb13f-9579-44db-9485-d4c4a94a2ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypt">
+      <UniqueIdentifier>{5ee50d80-a458-4712-a6db-d5ffa558be03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mongoose">
+      <UniqueIdentifier>{a9ed3784-32b3-410f-9cee-516e9ea369ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl_include">
+      <UniqueIdentifier>{5490b005-88b9-4ebe-be46-a499cda2b5c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{304aafa0-c1ea-4b12-9142-18d82aa93eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network_tcp">
+      <UniqueIdentifier>{bd7f6700-e5d6-4570-a3b3-0cff6551939b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network_udp">
+      <UniqueIdentifier>{32fee575-9248-484a-bffc-884de007f5fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network_multicast">
+      <UniqueIdentifier>{f4b3f0d1-b0c4-4e35-816e-ec2da4551d0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="reactor">
+      <UniqueIdentifier>{80334cd6-5720-4c2d-83dd-ab200abfdff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flow">
+      <UniqueIdentifier>{91182128-b3dd-4029-a829-24a9479e8a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol">
+      <UniqueIdentifier>{4bd15a0d-8b5f-4257-aad4-2b96b26a14a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_channel">
+      <UniqueIdentifier>{2f8dc692-2804-4315-b838-a94bb4fd8cac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_subscribe">
+      <UniqueIdentifier>{e68910dc-4a88-4139-97cd-94f1f4a7335a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_link">
+      <UniqueIdentifier>{8b56360c-96a7-414e-906e-6696ed3f1b3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_ofp">
+      <UniqueIdentifier>{869030da-8387-4f60-8c2c-4451ab58b225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="connect_tcp">
+      <UniqueIdentifier>{bd545374-e5bc-45e3-adbc-90424eef2e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_compress">
+      <UniqueIdentifier>{8b17435a-ea20-46dc-8123-7b3b10891f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_sequence">
+      <UniqueIdentifier>{ea77b2da-e09a-42f2-a4e8-fef7f64d73d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_guard">
+      <UniqueIdentifier>{1bcbb795-accb-4395-af6d-f624615f1d7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_hotline">
+      <UniqueIdentifier>{bad3febc-59a0-4bc9-b5bc-2825b6908fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol_ftd">
+      <UniqueIdentifier>{3695608a-4e8e-4409-9931-22d0881f4db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="package">
+      <UniqueIdentifier>{a0e802b5-ba1b-4133-8cdd-d1abd9452b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sequence">
+      <UniqueIdentifier>{a539995d-02e0-4a9f-8200-f8558e450af7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fronts">
+      <UniqueIdentifier>{c56e7e17-ea67-4ae2-9eda-12f7ec2c1ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="linkmanager">
+      <UniqueIdentifier>{4f28478f-cd7c-47f2-8693-922f49925015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="offerlink">
+      <UniqueIdentifier>{47515f47-26fd-43a8-86de-a58768c55283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ofserviceapi_include">
+      <UniqueIdentifier>{edd936ba-5ba6-4e34-8b82-ea03c03b0ded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ofapibase">
+      <UniqueIdentifier>{2ee13978-78f9-49c7-86fd-a800f3c2d460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="omqsapi">
+      <UniqueIdentifier>{bff3c572-3a2e-4663-a351-9e52978cc5ad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src_base\function\BaseFunction.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\Config.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\platform.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\printinfo.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\profile.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\utility.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\utils.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\version.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\BigDigit.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CDate.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CErrorEngine.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CSequence.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CSVParser.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CSVToField.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\FieldDescribe.cpp">
+      <Filter>datastruct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\thread\Semaphore.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\thread\Thread.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\xml\CXML.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\xml\XMLAction.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CFilelogService.cpp">
+      <Filter>logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CLogger.cpp">
+      <Filter>logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CProbeLogger.cpp">
+      <Filter>logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CSyslogService.cpp">
+      <Filter>logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\monitorIndex.cpp">
+      <Filter>logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\cryptUtility.cpp">
+      <Filter>crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\Des.cpp">
+      <Filter>crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\hexEncode.cpp">
+      <Filter>crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\md5Handler.cpp">
+      <Filter>crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\mongoose\mongoose.c">
+      <Filter>mongoose</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\openssl\1.1.0h\include\ApiKeyUtil.cpp">
+      <Filter>openssl_include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\Channel.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\Client.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\EpollReactor.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\ListenCtrl.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\NetworkFactory.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\PipeEventHandler.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\SelectReactor.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\Server.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\ServiceName.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\SocketInit.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpChannel.cpp">
+      <Filter>network_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpClient.cpp">
+      <Filter>network_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpNetworkFactory.cpp">
+      <Filter>network_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpServer.cpp">
+      <Filter>network_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpChannel.cpp">
+      <Filter>network_udp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpClient.cpp">
+      <Filter>network_udp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpNetworkFactory.cpp">
+      <Filter>network_udp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpServer.cpp">
+      <Filter>network_udp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiChannel.cpp">
+      <Filter>network_multicast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiClient.cpp">
+      <Filter>network_multicast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiNetworkFactory.cpp">
+      <Filter>network_multicast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiServer.cpp">
+      <Filter>network_multicast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\EventDispatcher.cpp">
+      <Filter>reactor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\EventHandler.cpp">
+      <Filter>reactor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\EventQueue.cpp">
+      <Filter>reactor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\Reactor.cpp">
+      <Filter>reactor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\SimpleReactor.cpp">
+      <Filter>reactor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\TimerHeap.cpp">
+      <Filter>reactor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\CachedFlow.cpp">
+      <Filter>flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\CacheList.cpp">
+      <Filter>flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\FileFlow.cpp">
+      <Filter>flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\FlowReader.cpp">
+      <Filter>flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\IndexFlow.cpp">
+      <Filter>flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\OneTimeFlow.cpp">
+      <Filter>flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\PubFlow.cpp">
+      <Filter>flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol\Protocol.cpp">
+      <Filter>protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\ChannelPackage.cpp">
+      <Filter>protocol_channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\ChannelProtocol.cpp">
+      <Filter>protocol_channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\Session.cpp">
+      <Filter>protocol_channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\SessionFactory.cpp">
+      <Filter>protocol_channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_subscribe\SCPPackage.cpp">
+      <Filter>protocol_subscribe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_subscribe\SCPPackageDesc.cpp">
+      <Filter>protocol_subscribe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_subscribe\SCPProtocol.cpp">
+      <Filter>protocol_subscribe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_link\XMPPackage.cpp">
+      <Filter>protocol_link</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_link\XMPProtocol.cpp">
+      <Filter>protocol_link</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_link\XMPSession.cpp">
+      <Filter>protocol_link</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\OrderingQ.cpp">
+      <Filter>protocol_ofp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\PublishPort.cpp">
+      <Filter>protocol_ofp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPProtocol.cpp">
+      <Filter>protocol_ofp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPPubEndPoint.cpp">
+      <Filter>protocol_ofp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPPubSession.cpp">
+      <Filter>protocol_ofp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPSession.cpp">
+      <Filter>protocol_ofp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPSubEndPoint.cpp">
+      <Filter>protocol_ofp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\TcpXtpProtocol.cpp">
+      <Filter>connect_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\TcpXtpSession.cpp">
+      <Filter>connect_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\XtpClientStub.cpp">
+      <Filter>connect_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\XtpServerStub.cpp">
+      <Filter>connect_tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_compress\CompressPackage.cpp">
+      <Filter>protocol_compress</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_compress\CompressProtocol.cpp">
+      <Filter>protocol_compress</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_compress\CompressUtil.cpp">
+      <Filter>protocol_compress</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrPackage.cpp">
+      <Filter>protocol_sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrProtocol.cpp">
+      <Filter>protocol_sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrSession.cpp">
+      <Filter>protocol_sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrSessionFactory.cpp">
+      <Filter>protocol_sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\SessionAggregation.cpp">
+      <Filter>protocol_sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_guard\ArbPackage.cpp">
+      <Filter>protocol_guard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_guard\ArbProtocol.cpp">
+      <Filter>protocol_guard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_guard\ArbSession.cpp">
+      <Filter>protocol_guard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_hotline\HotlinePackage.cpp">
+      <Filter>protocol_hotline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_hotline\HotlineProtocol.cpp">
+      <Filter>protocol_hotline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_hotline\HotlineSession.cpp">
+      <Filter>protocol_hotline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCProtocol.cpp">
+      <Filter>protocol_ftd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCPubEndPoint.cpp">
+      <Filter>protocol_ftd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCSession.cpp">
+      <Filter>protocol_ftd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCSubEndPoint.cpp">
+      <Filter>protocol_ftd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\FieldSet.cpp">
+      <Filter>package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\FTDCPackage.cpp">
+      <Filter>package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\Package.cpp">
+      <Filter>package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\XTPPackage.cpp">
+      <Filter>package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompFlowFactory.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompInitState.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompositorApp.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompPrepareState.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompPrimaryState.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompSecondaryState.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompServer.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompSingleState.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompState.cpp">
+      <Filter>sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\FrontLogger.cpp">
+      <Filter>fronts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\FtdFront.cpp">
+      <Filter>fronts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\GatewayFront.cpp">
+      <Filter>fronts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\MultiFront.cpp">
+      <Filter>fronts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\ShmFront.cpp">
+      <Filter>fronts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\WSFront.cpp">
+      <Filter>fronts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\XHttpFront.cpp">
+      <Filter>fronts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linkmanager\LinkManager.cpp">
+      <Filter>linkmanager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linkmanager\offerlink\OfferLink.cpp">
+      <Filter>offerlink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\ofserviceapi\ofapibase\OutFogServiceApiWrapper.cpp">
+      <Filter>ofapibase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\FlowDispatcher.cpp">
+      <Filter>omqsapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\FlowManager.cpp">
+      <Filter>omqsapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\KernelApp.cpp">
+      <Filter>omqsapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\OfKernelApiImp.cpp">
+      <Filter>omqsapi</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src_base\function\BaseFunction.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\Config.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\ExpEvaluate.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\platform.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\printinfo.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\profile.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\public.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\utility.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\utils.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\version.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\function\versionValue.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\BigDigit.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\CDate.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\CErrorEngine.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\CSequence.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\CSVParser.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\CSVToField.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\FieldDescribe.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\HashMap.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\datastruct\UFDataType.h">
+      <Filter>datastruct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\thread\Mutex.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\thread\Semaphore.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\thread\Thread.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\thread\ThreadSafeMap.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\xml\CXML.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\xml\XMLAction.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\logger\CFilelogService.h">
+      <Filter>logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\logger\CLogger.h">
+      <Filter>logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\logger\CProbeLogger.h">
+      <Filter>logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\logger\CSyslogService.h">
+      <Filter>logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\logger\monitorIndex.h">
+      <Filter>logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\crypt\cryptAll.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\crypt\cryptUtility.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\crypt\Des.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\crypt\DesEncryptAlgorithm.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\crypt\hexEncode.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\crypt\md5Handler.h">
+      <Filter>crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_base\mongoose\mongoose.h">
+      <Filter>mongoose</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\openssl\1.1.0h\include\ApiKeyUtil.h">
+      <Filter>openssl_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\Channel.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\Client.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\EpollReactor.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\ListenCtrl.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\NetworkFactory.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\PipeEventHandler.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\SelectReactor.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\Server.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\ServiceName.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network\SocketInit.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_tcp\TcpChannel.h">
+      <Filter>network_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_tcp\TcpClient.h">
+      <Filter>network_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_tcp\TcpNetworkFactory.h">
+      <Filter>network_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_tcp\TcpServer.h">
+      <Filter>network_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_udp\UdpChannel.h">
+      <Filter>network_udp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_udp\UdpClient.h">
+      <Filter>network_udp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_udp\UdpNetworkFactory.h">
+      <Filter>network_udp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_udp\UdpServer.h">
+      <Filter>network_udp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_multicast\MultiChannel.h">
+      <Filter>network_multicast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_multicast\MultiClient.h">
+      <Filter>network_multicast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_multicast\MultiNetworkFactory.h">
+      <Filter>network_multicast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\network_multicast\MultiServer.h">
+      <Filter>network_multicast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\reactor\EventDispatcher.h">
+      <Filter>reactor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\reactor\EventHandler.h">
+      <Filter>reactor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\reactor\EventQueue.h">
+      <Filter>reactor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\reactor\Reactor.h">
+      <Filter>reactor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\reactor\SimpleReactor.h">
+      <Filter>reactor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\reactor\TimerHeap.h">
+      <Filter>reactor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_network\reactor\TimerQueue.h">
+      <Filter>reactor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\CachedFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\CacheList.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\DialogFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\FileFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\Flow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\FlowReader.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\IndexFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\LockFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\OneTimeFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\PubFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\flow\ReadFlow.h">
+      <Filter>flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol\Protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_channel\ChannelPackage.h">
+      <Filter>protocol_channel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_channel\ChannelProtocol.h">
+      <Filter>protocol_channel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_channel\Session.h">
+      <Filter>protocol_channel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_channel\SessionFactory.h">
+      <Filter>protocol_channel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_subscribe\SCPPackage.h">
+      <Filter>protocol_subscribe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_subscribe\SCPPackageDesc.h">
+      <Filter>protocol_subscribe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_subscribe\SCPProtocol.h">
+      <Filter>protocol_subscribe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_link\XMPPackage.h">
+      <Filter>protocol_link</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_link\XMPProtocol.h">
+      <Filter>protocol_link</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_link\XMPSession.h">
+      <Filter>protocol_link</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\FlowSubscriber.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\OrderingQ.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\PublishPort.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\Subscriber.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\SynFlowSubscriber.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPProtocol.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPPubEndPoint.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPPubSession.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPSession.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPSubEndPoint.h">
+      <Filter>protocol_ofp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\connect_tcp\TcpXtpProtocol.h">
+      <Filter>connect_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\connect_tcp\TcpXtpSession.h">
+      <Filter>connect_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpClient.h">
+      <Filter>connect_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpClientStub.h">
+      <Filter>connect_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpServer.h">
+      <Filter>connect_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpServerStub.h">
+      <Filter>connect_tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_compress\CompressPackage.h">
+      <Filter>protocol_compress</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_compress\CompressProtocol.h">
+      <Filter>protocol_compress</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_compress\CompressUtil.h">
+      <Filter>protocol_compress</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrPackage.h">
+      <Filter>protocol_sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrProtocol.h">
+      <Filter>protocol_sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrSession.h">
+      <Filter>protocol_sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrSessionFactory.h">
+      <Filter>protocol_sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\SessionAggregation.h">
+      <Filter>protocol_sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_guard\ArbPackage.h">
+      <Filter>protocol_guard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_guard\ArbProtocol.h">
+      <Filter>protocol_guard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_guard\ArbSession.h">
+      <Filter>protocol_guard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_hotline\HotlinePackage.h">
+      <Filter>protocol_hotline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_hotline\HotlineProtocol.h">
+      <Filter>protocol_hotline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_hotline\HotlineSession.h">
+      <Filter>protocol_hotline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCProtocol.h">
+      <Filter>protocol_ftd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCPubEndPoint.h">
+      <Filter>protocol_ftd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCSession.h">
+      <Filter>protocol_ftd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCSubEndPoint.h">
+      <Filter>protocol_ftd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCSubscriber.h">
+      <Filter>protocol_ftd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\package\FieldSet.h">
+      <Filter>package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\package\FTDCPackage.h">
+      <Filter>package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\package\Package.h">
+      <Filter>package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_protocol\package\XTPPackage.h">
+      <Filter>package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompFlowFactory.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompInitState.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompositorApp.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompPrepareState.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompPrimaryState.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompSecondaryState.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompServer.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompSingleState.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sequence\CompState.h">
+      <Filter>sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fronts\FrontLogger.h">
+      <Filter>fronts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fronts\FtdFront.h">
+      <Filter>fronts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fronts\GatewayFront.h">
+      <Filter>fronts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fronts\MultiFront.h">
+      <Filter>fronts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fronts\ShmFront.h">
+      <Filter>fronts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fronts\WSFront.h">
+      <Filter>fronts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\fronts\XHttpFront.h">
+      <Filter>fronts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linkmanager\LinkManager.h">
+      <Filter>linkmanager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linkmanager\offerlink\OfferLink.h">
+      <Filter>offerlink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\OutFogServiceApi.h">
+      <Filter>ofserviceapi_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\OutFogServiceApiStruct.h">
+      <Filter>ofserviceapi_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\OutFogServiceCApi.h">
+      <Filter>ofserviceapi_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\ServiceResponser.h">
+      <Filter>ofserviceapi_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\ofserviceapi\ofapibase\OutFogService.h">
+      <Filter>ofapibase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\ofserviceapi\ofapibase\OutFogServiceApiWrapper.h">
+      <Filter>ofapibase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\omqsapi\FlowDispatcher.h">
+      <Filter>omqsapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\omqsapi\FlowManager.h">
+      <Filter>omqsapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\omqsapi\KernelApp.h">
+      <Filter>omqsapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\omqsapi\OfKernelApiImp.h">
+      <Filter>omqsapi</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

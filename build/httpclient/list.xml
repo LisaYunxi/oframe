@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gb2312"?>
+<project target="httpclient" targettype="exe" workdir="." hasdebug="no" hasmap="no" hasprofile="no" multithread="yes" warninglevel="2">
+	<cppflags>
+		<cppflag name="DEBUG_NOT_LOG"/>
+	</cppflags>	
+	<package dir="../../src_base/function"/>
+	<package dir="../../src_base/mongoose"/>
+	<package dir="../../libs/openssl" version="1.1.0h" libpath="static" libtype="static"/>
+	<package dir="."/>	
+</project>

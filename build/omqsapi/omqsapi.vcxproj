@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{F8035D9C-4F33-482E-9BB4-08E236BB54EB}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\src_base\function\.;..\..\src_base\datastruct\.;..\..\src_base\thread\.;..\..\src_base\xml\.;..\..\src_base\logger\.;..\..\src_base\crypt\.;..\..\src_base\mongoose\.;..\..\libs\openssl\1.1.0h\include\.;..\..\src_network\network\.;..\..\src_network\network_tcp\.;..\..\src_network\network_udp\.;..\..\src_network\network_multicast\.;..\..\src_network\reactor\.;..\..\src_protocol\flow\.;..\..\src_protocol\protocol\.;..\..\src_protocol\protocol_channel\.;..\..\src_protocol\protocol_subscribe\.;..\..\src_protocol\protocol_link\.;..\..\src_protocol\protocol_ofp\.;..\..\src_protocol\connect_tcp\.;..\..\src_protocol\protocol_compress\.;..\..\src_protocol\protocol_sequence\.;..\..\src_protocol\protocol_guard\.;..\..\src_protocol\protocol_hotline\.;..\..\src_protocol\protocol_ftd\.;..\..\src_protocol\package\.;..\..\src\sequence\.;..\..\src\fronts\.;..\..\src\linkmanager\.;..\..\src\linkmanager\offerlink\.;..\..\libs\ofserviceapi\1.0\include\.;..\..\libs\ofserviceapi\ofapibase\.;..\..\src\omqsapi\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG_NOT_LOG;OUTFOGSERVICE_API_IS_LIB;LIB_OUTFOGSERVICE_API_EXPORT;WINDOWS;MSVC;ISLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\omqsapi.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions> -EHsc </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\omqsapi.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\omqsapi.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>.\.\omqsapi.dll</OutputFile>
+      <ImportLibrary>.\.\omqsapi.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\..\libs\openssl\1.1.0h\static\windows_x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;ws2_32.lib;crypto.lib;ssl.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\src_base\function\.;..\..\src_base\datastruct\.;..\..\src_base\thread\.;..\..\src_base\xml\.;..\..\src_base\logger\.;..\..\src_base\crypt\.;..\..\src_base\mongoose\.;..\..\libs\openssl\1.1.0h\include\.;..\..\src_network\network\.;..\..\src_network\network_tcp\.;..\..\src_network\network_udp\.;..\..\src_network\network_multicast\.;..\..\src_network\reactor\.;..\..\src_protocol\flow\.;..\..\src_protocol\protocol\.;..\..\src_protocol\protocol_channel\.;..\..\src_protocol\protocol_subscribe\.;..\..\src_protocol\protocol_link\.;..\..\src_protocol\protocol_ofp\.;..\..\src_protocol\connect_tcp\.;..\..\src_protocol\protocol_compress\.;..\..\src_protocol\protocol_sequence\.;..\..\src_protocol\protocol_guard\.;..\..\src_protocol\protocol_hotline\.;..\..\src_protocol\protocol_ftd\.;..\..\src_protocol\package\.;..\..\src\sequence\.;..\..\src\fronts\.;..\..\src\linkmanager\.;..\..\src\linkmanager\offerlink\.;..\..\libs\ofserviceapi\1.0\include\.;..\..\libs\ofserviceapi\ofapibase\.;..\..\src\omqsapi\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG_NOT_LOG;OUTFOGSERVICE_API_IS_LIB;LIB_OUTFOGSERVICE_API_EXPORT;WINDOWS;MSVC;ISLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\omqsapi.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions> -EHsc </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\omqsapi.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\omqsapi.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>.\.\omqsapi.dll</OutputFile>
+      <ImportLibrary>.\.\omqsapi.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\..\libs\openssl\1.1.0h\static\windows_x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;ws2_32.lib;crypto.lib;ssl.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <AdditionalIncludeDirectories>..\..\src_base\function\.;..\..\src_base\datastruct\.;..\..\src_base\thread\.;..\..\src_base\xml\.;..\..\src_base\logger\.;..\..\src_base\crypt\.;..\..\src_base\mongoose\.;..\..\libs\openssl\1.1.0h\include\.;..\..\src_network\network\.;..\..\src_network\network_tcp\.;..\..\src_network\network_udp\.;..\..\src_network\network_multicast\.;..\..\src_network\reactor\.;..\..\src_protocol\flow\.;..\..\src_protocol\protocol\.;..\..\src_protocol\protocol_channel\.;..\..\src_protocol\protocol_subscribe\.;..\..\src_protocol\protocol_link\.;..\..\src_protocol\protocol_ofp\.;..\..\src_protocol\connect_tcp\.;..\..\src_protocol\protocol_compress\.;..\..\src_protocol\protocol_sequence\.;..\..\src_protocol\protocol_guard\.;..\..\src_protocol\protocol_hotline\.;..\..\src_protocol\protocol_ftd\.;..\..\src_protocol\package\.;..\..\src\sequence\.;..\..\src\fronts\.;..\..\src\linkmanager\.;..\..\src\linkmanager\offerlink\.;..\..\libs\ofserviceapi\1.0\include\.;..\..\libs\ofserviceapi\ofapibase\.;..\..\src\omqsapi\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG_NOT_LOG;OUTFOGSERVICE_API_IS_LIB;LIB_OUTFOGSERVICE_API_EXPORT;DEBUG;DEBUG_LOG;WINDOWS;MSVC;ISLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\omqsapi.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\omqsapi.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\omqsapi.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>.\.\omqsapi.dll</OutputFile>
+      <ImportLibrary>.\.\omqsapi.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\..\libs\openssl\1.1.0h\static\windows_x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;ws2_32.lib;crypto.lib;ssl.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\src_base\function\.;..\..\src_base\datastruct\.;..\..\src_base\thread\.;..\..\src_base\xml\.;..\..\src_base\logger\.;..\..\src_base\crypt\.;..\..\src_base\mongoose\.;..\..\libs\openssl\1.1.0h\include\.;..\..\src_network\network\.;..\..\src_network\network_tcp\.;..\..\src_network\network_udp\.;..\..\src_network\network_multicast\.;..\..\src_network\reactor\.;..\..\src_protocol\flow\.;..\..\src_protocol\protocol\.;..\..\src_protocol\protocol_channel\.;..\..\src_protocol\protocol_subscribe\.;..\..\src_protocol\protocol_link\.;..\..\src_protocol\protocol_ofp\.;..\..\src_protocol\connect_tcp\.;..\..\src_protocol\protocol_compress\.;..\..\src_protocol\protocol_sequence\.;..\..\src_protocol\protocol_guard\.;..\..\src_protocol\protocol_hotline\.;..\..\src_protocol\protocol_ftd\.;..\..\src_protocol\package\.;..\..\src\sequence\.;..\..\src\fronts\.;..\..\src\linkmanager\.;..\..\src\linkmanager\offerlink\.;..\..\libs\ofserviceapi\1.0\include\.;..\..\libs\ofserviceapi\ofapibase\.;..\..\src\omqsapi\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG_NOT_LOG;OUTFOGSERVICE_API_IS_LIB;LIB_OUTFOGSERVICE_API_EXPORT;DEBUG;DEBUG_LOG;WINDOWS;MSVC;ISLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\omqsapi.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\omqsapi.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\omqsapi.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>.\.\omqsapi.dll</OutputFile>
+      <ImportLibrary>.\.\omqsapi.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\..\libs\openssl\1.1.0h\static\windows_x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;ws2_32.lib;crypto.lib;ssl.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\libs\ofserviceapi\ofapibase\OutFogServiceApiWrapper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\openssl\1.1.0h\include\ApiKeyUtil.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\FrontLogger.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\FtdFront.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\GatewayFront.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\MultiFront.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\ShmFront.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\WSFront.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fronts\XHttpFront.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linkmanager\LinkManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linkmanager\offerlink\OfferLink.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\FlowDispatcher.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\FlowManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\KernelApp.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\omqsapi\OfKernelApiImp.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompFlowFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompInitState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompositorApp.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompPrepareState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompPrimaryState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompSecondaryState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompServer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompSingleState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sequence\CompState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\cryptUtility.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\Des.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\hexEncode.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\crypt\md5Handler.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\BigDigit.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CDate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CErrorEngine.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CSequence.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CSVParser.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\CSVToField.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\datastruct\FieldDescribe.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\BaseFunction.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\Config.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\platform.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\printinfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\profile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\utility.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\utils.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\function\version.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CFilelogService.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CLogger.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CProbeLogger.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\CSyslogService.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\logger\monitorIndex.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\mongoose\mongoose.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\thread\Semaphore.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\thread\Thread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\xml\CXML.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_base\xml\XMLAction.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\Channel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\Client.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\EpollReactor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\ListenCtrl.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\NetworkFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\PipeEventHandler.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\SelectReactor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\Server.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\ServiceName.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network\SocketInit.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiChannel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiClient.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiNetworkFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_multicast\MultiServer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpChannel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpClient.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpNetworkFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_tcp\TcpServer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpChannel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpClient.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpNetworkFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\network_udp\UdpServer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\EventDispatcher.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\EventHandler.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\EventQueue.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\Reactor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\SimpleReactor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_network\reactor\TimerHeap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\TcpXtpProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\TcpXtpSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\XtpClientStub.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\connect_tcp\XtpServerStub.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\CachedFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\CacheList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\FileFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\FlowReader.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\IndexFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\OneTimeFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\flow\PubFlow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\FieldSet.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\FTDCPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\Package.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\package\XTPPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol\Protocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\ChannelPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\ChannelProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\Session.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_channel\SessionFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_compress\CompressPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_compress\CompressProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_compress\CompressUtil.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCPubEndPoint.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ftd\FTDCSubEndPoint.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_guard\ArbPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_guard\ArbProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_guard\ArbSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_hotline\HotlinePackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_hotline\HotlineProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_hotline\HotlineSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_link\XMPPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_link\XMPProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_link\XMPSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\OrderingQ.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\PublishPort.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPPubEndPoint.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPPubSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_ofp\XTPSubEndPoint.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrSession.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\AggrSessionFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_sequence\SessionAggregation.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_subscribe\SCPPackage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_subscribe\SCPPackageDesc.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src_protocol\protocol_subscribe\SCPProtocol.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> -EHsc   -EHsc </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> -EHsc -Zm200   -EHsc -Zm200 </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\OutFogServiceApi.h" />
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\OutFogServiceApiStruct.h" />
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\OutFogServiceCApi.h" />
+    <ClInclude Include="..\..\libs\ofserviceapi\1.0\include\ServiceResponser.h" />
+    <ClInclude Include="..\..\libs\ofserviceapi\ofapibase\OutFogService.h" />
+    <ClInclude Include="..\..\libs\ofserviceapi\ofapibase\OutFogServiceApiWrapper.h" />
+    <ClInclude Include="..\..\libs\openssl\1.1.0h\include\ApiKeyUtil.h" />
+    <ClInclude Include="..\..\src\fronts\FrontLogger.h" />
+    <ClInclude Include="..\..\src\fronts\FtdFront.h" />
+    <ClInclude Include="..\..\src\fronts\GatewayFront.h" />
+    <ClInclude Include="..\..\src\fronts\MultiFront.h" />
+    <ClInclude Include="..\..\src\fronts\ShmFront.h" />
+    <ClInclude Include="..\..\src\fronts\WSFront.h" />
+    <ClInclude Include="..\..\src\fronts\XHttpFront.h" />
+    <ClInclude Include="..\..\src\linkmanager\LinkManager.h" />
+    <ClInclude Include="..\..\src\linkmanager\offerlink\OfferLink.h" />
+    <ClInclude Include="..\..\src\omqsapi\FlowDispatcher.h" />
+    <ClInclude Include="..\..\src\omqsapi\FlowManager.h" />
+    <ClInclude Include="..\..\src\omqsapi\KernelApp.h" />
+    <ClInclude Include="..\..\src\omqsapi\OfKernelApiImp.h" />
+    <ClInclude Include="..\..\src\sequence\CompFlowFactory.h" />
+    <ClInclude Include="..\..\src\sequence\CompInitState.h" />
+    <ClInclude Include="..\..\src\sequence\CompositorApp.h" />
+    <ClInclude Include="..\..\src\sequence\CompPrepareState.h" />
+    <ClInclude Include="..\..\src\sequence\CompPrimaryState.h" />
+    <ClInclude Include="..\..\src\sequence\CompSecondaryState.h" />
+    <ClInclude Include="..\..\src\sequence\CompServer.h" />
+    <ClInclude Include="..\..\src\sequence\CompSingleState.h" />
+    <ClInclude Include="..\..\src\sequence\CompState.h" />
+    <ClInclude Include="..\..\src_base\crypt\cryptAll.h" />
+    <ClInclude Include="..\..\src_base\crypt\cryptUtility.h" />
+    <ClInclude Include="..\..\src_base\crypt\Des.h" />
+    <ClInclude Include="..\..\src_base\crypt\DesEncryptAlgorithm.h" />
+    <ClInclude Include="..\..\src_base\crypt\hexEncode.h" />
+    <ClInclude Include="..\..\src_base\crypt\md5Handler.h" />
+    <ClInclude Include="..\..\src_base\datastruct\BigDigit.h" />
+    <ClInclude Include="..\..\src_base\datastruct\CDate.h" />
+    <ClInclude Include="..\..\src_base\datastruct\CErrorEngine.h" />
+    <ClInclude Include="..\..\src_base\datastruct\CSequence.h" />
+    <ClInclude Include="..\..\src_base\datastruct\CSVParser.h" />
+    <ClInclude Include="..\..\src_base\datastruct\CSVToField.h" />
+    <ClInclude Include="..\..\src_base\datastruct\FieldDescribe.h" />
+    <ClInclude Include="..\..\src_base\datastruct\HashMap.h" />
+    <ClInclude Include="..\..\src_base\datastruct\UFDataType.h" />
+    <ClInclude Include="..\..\src_base\function\BaseFunction.h" />
+    <ClInclude Include="..\..\src_base\function\Config.h" />
+    <ClInclude Include="..\..\src_base\function\ExpEvaluate.h" />
+    <ClInclude Include="..\..\src_base\function\platform.h" />
+    <ClInclude Include="..\..\src_base\function\printinfo.h" />
+    <ClInclude Include="..\..\src_base\function\profile.h" />
+    <ClInclude Include="..\..\src_base\function\public.h" />
+    <ClInclude Include="..\..\src_base\function\utility.h" />
+    <ClInclude Include="..\..\src_base\function\utils.h" />
+    <ClInclude Include="..\..\src_base\function\version.h" />
+    <ClInclude Include="..\..\src_base\function\versionValue.h" />
+    <ClInclude Include="..\..\src_base\logger\CFilelogService.h" />
+    <ClInclude Include="..\..\src_base\logger\CLogger.h" />
+    <ClInclude Include="..\..\src_base\logger\CProbeLogger.h" />
+    <ClInclude Include="..\..\src_base\logger\CSyslogService.h" />
+    <ClInclude Include="..\..\src_base\logger\monitorIndex.h" />
+    <ClInclude Include="..\..\src_base\mongoose\mongoose.h" />
+    <ClInclude Include="..\..\src_base\thread\Mutex.h" />
+    <ClInclude Include="..\..\src_base\thread\Semaphore.h" />
+    <ClInclude Include="..\..\src_base\thread\Thread.h" />
+    <ClInclude Include="..\..\src_base\thread\ThreadSafeMap.h" />
+    <ClInclude Include="..\..\src_base\xml\CXML.h" />
+    <ClInclude Include="..\..\src_base\xml\XMLAction.h" />
+    <ClInclude Include="..\..\src_network\network\Channel.h" />
+    <ClInclude Include="..\..\src_network\network\Client.h" />
+    <ClInclude Include="..\..\src_network\network\EpollReactor.h" />
+    <ClInclude Include="..\..\src_network\network\ListenCtrl.h" />
+    <ClInclude Include="..\..\src_network\network\NetworkFactory.h" />
+    <ClInclude Include="..\..\src_network\network\PipeEventHandler.h" />
+    <ClInclude Include="..\..\src_network\network\SelectReactor.h" />
+    <ClInclude Include="..\..\src_network\network\Server.h" />
+    <ClInclude Include="..\..\src_network\network\ServiceName.h" />
+    <ClInclude Include="..\..\src_network\network\SocketInit.h" />
+    <ClInclude Include="..\..\src_network\network_multicast\MultiChannel.h" />
+    <ClInclude Include="..\..\src_network\network_multicast\MultiClient.h" />
+    <ClInclude Include="..\..\src_network\network_multicast\MultiNetworkFactory.h" />
+    <ClInclude Include="..\..\src_network\network_multicast\MultiServer.h" />
+    <ClInclude Include="..\..\src_network\network_tcp\TcpChannel.h" />
+    <ClInclude Include="..\..\src_network\network_tcp\TcpClient.h" />
+    <ClInclude Include="..\..\src_network\network_tcp\TcpNetworkFactory.h" />
+    <ClInclude Include="..\..\src_network\network_tcp\TcpServer.h" />
+    <ClInclude Include="..\..\src_network\network_udp\UdpChannel.h" />
+    <ClInclude Include="..\..\src_network\network_udp\UdpClient.h" />
+    <ClInclude Include="..\..\src_network\network_udp\UdpNetworkFactory.h" />
+    <ClInclude Include="..\..\src_network\network_udp\UdpServer.h" />
+    <ClInclude Include="..\..\src_network\reactor\EventDispatcher.h" />
+    <ClInclude Include="..\..\src_network\reactor\EventHandler.h" />
+    <ClInclude Include="..\..\src_network\reactor\EventQueue.h" />
+    <ClInclude Include="..\..\src_network\reactor\Reactor.h" />
+    <ClInclude Include="..\..\src_network\reactor\SimpleReactor.h" />
+    <ClInclude Include="..\..\src_network\reactor\TimerHeap.h" />
+    <ClInclude Include="..\..\src_network\reactor\TimerQueue.h" />
+    <ClInclude Include="..\..\src_protocol\connect_tcp\TcpXtpProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\connect_tcp\TcpXtpSession.h" />
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpClient.h" />
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpClientStub.h" />
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpServer.h" />
+    <ClInclude Include="..\..\src_protocol\connect_tcp\XtpServerStub.h" />
+    <ClInclude Include="..\..\src_protocol\flow\CachedFlow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\CacheList.h" />
+    <ClInclude Include="..\..\src_protocol\flow\DialogFlow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\FileFlow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\Flow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\FlowReader.h" />
+    <ClInclude Include="..\..\src_protocol\flow\IndexFlow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\LockFlow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\OneTimeFlow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\PubFlow.h" />
+    <ClInclude Include="..\..\src_protocol\flow\ReadFlow.h" />
+    <ClInclude Include="..\..\src_protocol\package\FieldSet.h" />
+    <ClInclude Include="..\..\src_protocol\package\FTDCPackage.h" />
+    <ClInclude Include="..\..\src_protocol\package\Package.h" />
+    <ClInclude Include="..\..\src_protocol\package\XTPPackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol\Protocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_channel\ChannelPackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_channel\ChannelProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_channel\Session.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_channel\SessionFactory.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_compress\CompressPackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_compress\CompressProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_compress\CompressUtil.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCPubEndPoint.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCSession.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCSubEndPoint.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ftd\FTDCSubscriber.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_guard\ArbPackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_guard\ArbProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_guard\ArbSession.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_hotline\HotlinePackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_hotline\HotlineProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_hotline\HotlineSession.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_link\XMPPackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_link\XMPProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_link\XMPSession.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\FlowSubscriber.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\OrderingQ.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\PublishPort.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\Subscriber.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\SynFlowSubscriber.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPPubEndPoint.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPPubSession.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPSession.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_ofp\XTPSubEndPoint.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrPackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrProtocol.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrSession.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\AggrSessionFactory.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_sequence\SessionAggregation.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_subscribe\SCPPackage.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_subscribe\SCPPackageDesc.h" />
+    <ClInclude Include="..\..\src_protocol\protocol_subscribe\SCPProtocol.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

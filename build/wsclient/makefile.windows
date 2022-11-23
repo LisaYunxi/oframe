@@ -1,0 +1,98 @@
+
+CPP=cl
+LINK=link
+LIB32=lib 
+PREP=cl -nologo -EP
+COPY=copy /y
+DEL=del
+MAKE=nmake
+ECHO=echo
+
+
+
+	
+	
+ISLIB=N
+DEFINES=-DWINDOWS -DMSVC
+target=.\.\wsclient.exe
+
+APPEND_CPPFLAGS=-nologo -EHsc -MT -O2 -GF -FD
+
+PROFILE_CPPFLAGS=
+
+WARNING_CPPFLAGS=-W3
+
+CPPFLAGS=   -DDEBUG_NOT_LOG $(APPEND_CPPFLAGS) $(PROFILE_CPPFLAGS) $(WARNING_CPPFLAGS) $(DEFINES)
+LIBS= kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib ws2_32.lib  
+
+DEBUG_LDFLAGS=
+
+MAP_LDFLAGS=
+
+PROFILE_LDFLAGS=
+
+WARNING_LDFLAGS=/WARN:2
+
+LDFLAGS=    -nologo /FIXED:NO $(MAP_LDFLAGS) $(DEBUG_LDFLAGS) $(PROFILE_LDFLAGS) $(WARNING_LDFLAGS)
+LIBARFLAGS=    -nologo $(MAP_LDFLAGS) $(DEBUG_LDFLAGS) $(PROFILE_LDFLAGS)
+DLLARFLAGS=    -nologo /dll $(MAP_LDFLAGS) $(DEBUG_LDFLAGS) $(PROFILE_LDFLAGS)
+
+all: code
+
+code: clearoutput $(target)
+
+clearoutput:
+	@$(ECHO) Compiling...
+	-mkdir  wsclient_build_dir
+	-mkdir  .\.\
+	
+function_obj=wsclient_build_dir\BaseFunction.cpp.obj wsclient_build_dir\Config.cpp.obj wsclient_build_dir\platform.cpp.obj wsclient_build_dir\printinfo.cpp.obj wsclient_build_dir\profile.cpp.obj wsclient_build_dir\utility.cpp.obj wsclient_build_dir\utils.cpp.obj wsclient_build_dir\version.cpp.obj 
+function_includedir=-I..\..\src_base\function\.
+mongoose_obj=wsclient_build_dir\mongoose.c.obj 
+mongoose_includedir=-I..\..\src_base\mongoose\.
+openssl_include_obj=wsclient_build_dir\ApiKeyUtil.cpp.obj 
+openssl_include_includedir=-I..\..\libs\openssl\1.1.0h\include\.
+openssl_lib_lib=/libpath:..\..\libs\openssl\1.1.0h\static\windows_x64 crypto.lib ssl.lib Crypt32.lib 
+openssl_lib_includedir= 
+wsclient_obj=wsclient_build_dir\websocketClient.cpp.obj 
+wsclient_includedir= 
+
+all_objs=$(function_obj) $(mongoose_obj) $(openssl_include_obj) $(wsclient_obj) 
+
+all_libs=$(openssl_lib_lib) 
+INCLUDEDIR= $(function_includedir)  $(mongoose_includedir)  $(openssl_include_includedir)  $(openssl_lib_includedir)  $(wsclient_includedir) 
+
+wsclient_build_dir\BaseFunction.cpp.obj: ..\..\src_base\function\BaseFunction.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\BaseFunction.cpp /Fowsclient_build_dir\BaseFunction.cpp.obj
+wsclient_build_dir\Config.cpp.obj: ..\..\src_base\function\Config.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\Config.cpp /Fowsclient_build_dir\Config.cpp.obj
+wsclient_build_dir\platform.cpp.obj: ..\..\src_base\function\platform.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\platform.cpp /Fowsclient_build_dir\platform.cpp.obj
+wsclient_build_dir\printinfo.cpp.obj: ..\..\src_base\function\printinfo.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\printinfo.cpp /Fowsclient_build_dir\printinfo.cpp.obj
+wsclient_build_dir\profile.cpp.obj: ..\..\src_base\function\profile.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\profile.cpp /Fowsclient_build_dir\profile.cpp.obj
+wsclient_build_dir\utility.cpp.obj: ..\..\src_base\function\utility.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\utility.cpp /Fowsclient_build_dir\utility.cpp.obj
+wsclient_build_dir\utils.cpp.obj: ..\..\src_base\function\utils.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\utils.cpp /Fowsclient_build_dir\utils.cpp.obj
+wsclient_build_dir\version.cpp.obj: ..\..\src_base\function\version.cpp $(function_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\function\version.cpp /Fowsclient_build_dir\version.cpp.obj
+wsclient_build_dir\mongoose.c.obj: ..\..\src_base\mongoose\mongoose.c $(mongoose_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\src_base\mongoose\mongoose.c /Fowsclient_build_dir\mongoose.c.obj
+wsclient_build_dir\ApiKeyUtil.cpp.obj: ..\..\libs\openssl\1.1.0h\include\ApiKeyUtil.cpp $(openssl_include_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c ..\..\libs\openssl\1.1.0h\include\ApiKeyUtil.cpp /Fowsclient_build_dir\ApiKeyUtil.cpp.obj
+wsclient_build_dir\websocketClient.cpp.obj: .\websocketClient.cpp $(wsclient_include)
+	$(CPP) $(CPPFLAGS) $(INCLUDEDIR) -c .\websocketClient.cpp /Fowsclient_build_dir\websocketClient.cpp.obj
+
+$(target): $(all_objs)
+	$(LINK) $(LDFLAGS) -out:$@ $(all_objs) $(all_libs) $(LIBS)
+
+clean:
+	-$(DEL) $(function_obj)
+	-$(DEL) $(mongoose_obj)
+	-$(DEL) $(openssl_include_obj)
+	-$(DEL) $(wsclient_obj)
+
+	-$(DEL) $(target)
+	-$(DEL) .\.\wsclient.pdb
